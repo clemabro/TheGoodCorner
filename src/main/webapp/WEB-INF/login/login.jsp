@@ -1,11 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
-<head><title>Missing Feature</title></head>
+<head>
+    <title>Connexion</title>
+</head>
 
 <body>
-<p>
-    <s:text name="Missing.message"/>
-</p>
+<h3><s:text name="HelloWorld.message"/></h3>
 </body>
 </html>
