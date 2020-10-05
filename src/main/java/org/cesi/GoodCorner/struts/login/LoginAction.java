@@ -20,6 +20,8 @@ public class LoginAction extends ActionSupport{
 ***REMOVED***
 	
 	public String inscription() {
+		
+		
 		return SUCCESS;
 ***REMOVED***
 	
