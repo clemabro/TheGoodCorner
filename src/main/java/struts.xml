@@ -4,10 +4,21 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
-    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.devMode" value="true"/>    
+    
+    <package name="default" namespace="/" extends="struts-default">
 
+        <default-action-ref name="index"/>
+
+        <action name="index">
+            <result type="redirectAction">
+                <param name="actionName">connexion</param>
+                <param name="namespace">/connexion</param>
+            </result>
+        </action>
+
+    </package>
+    
     <include file="org/cesi/GoodCorner/struts/login/struts-login.xml" />
     <include file="org/cesi/GoodCorner/struts/annonces/struts-annonces.xml" />
-
-    <!-- Add addition packages and configuration here. -->
 </struts>

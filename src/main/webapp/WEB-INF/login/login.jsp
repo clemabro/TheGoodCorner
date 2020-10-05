@@ -1,11 +1,11 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
-<head>
-    <title>Connexion</title>
-</head>
+<jsp:include page="../header.jsp" >
+  <jsp:param name="title" value="Connexion" />
+</jsp:include>
 
 <body>
-<h3><s:text name="HelloWorld.message"/></h3>
+	<h3><s:text name="Connexion.titre"/></h3>
 </body>
 </html>
