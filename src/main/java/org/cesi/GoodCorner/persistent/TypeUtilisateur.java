@@ -1,4 +1,4 @@
-package org.cesi.GoodCorner.entity;
+package org.cesi.GoodCorner.persistent;
 
 public class TypeUtilisateur {
 	public final static Integer PARTICULIER = 1;

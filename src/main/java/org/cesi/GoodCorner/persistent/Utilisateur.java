@@ -1,4 +1,4 @@
-package org.cesi.GoodCorner.entity;
+package org.cesi.GoodCorner.persistent;
 
 public class Utilisateur {
 	private String mail;

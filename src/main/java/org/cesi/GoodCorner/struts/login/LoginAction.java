@@ -1,6 +1,6 @@
 package org.cesi.GoodCorner.struts.login;
 
-import org.cesi.GoodCorner.entity.Utilisateur;
+import org.cesi.GoodCorner.persistent.Utilisateur;
 
 import com.opensymphony.xwork2.ActionSupport;
 
