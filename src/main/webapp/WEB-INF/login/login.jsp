@@ -48,7 +48,7 @@ var seConnecter = function(e) {
 	            <h3><s:text name="Connexion.titre" /></h3>
 	            <form id="loginForm">
 	                <div class="form-group">
-	                    <input type="text" class="form-control" required id="email" placeholder="<s:text name="Connexion.email" />" value="" />
+	                    <input type="text" class="form-control" required id="email" placeholder="<s:text name="Connexion.email" />" value="<s:property value="mail" />" />
 	                </div>
 	                <div class="form-group">
 	                    <input type="password" class="form-control" required id="mdp" placeholder="<s:text name="Connexion.motDePasse" />" value="" />

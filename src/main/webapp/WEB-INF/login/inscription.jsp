@@ -13,10 +13,12 @@ $(document).ready(function() {
 
 var inscription = function(e) {
 	e.preventDefault();
+	$('#email').removeClass("inputRequired");
+	$('#mdp').removeClass("inputRequired");
 	
 	mailAndMdpEmpty = false;
 	
-	if($('#email').val() == "") {
+	if($('#email').val() == "" || !$("#email").val().includes('@') || !$("#email").val().includes('.')) {
 		$('#email').addClass("inputRequired")
 ***REMOVED*** else if($('#mdp').val() == "") {
 		$('#mdp').addClass("inputRequired")
@@ -36,8 +38,17 @@ var inscription = function(e) {
 				"userToCreate.telephone" : $('#tel').val(),
 				"userToCreate.typeUtilisateur.id" : $('#groupTypeUser').find('input:checked').val()
 ***REMOVED***,
-			success: function() {
+			success: function(data) {
 				
+				obj = JSON.parse(data);
+				
+				if(obj.Statut == "EXIST") {
+					$('#textExist').show();
+	***REMOVED*** else {
+					$('#mailHidden').attr('value', obj.mail);
+				
+					$('#redirect').submit();
+	***REMOVED***
 ***REMOVED***
 ***REMOVED***)
 ***REMOVED***
@@ -53,6 +64,7 @@ var inscription = function(e) {
 	            <form id="loginForm">
 	                <div class="form-group">
 	                    <input type="text" class="form-control" required id="email" placeholder="<s:text name="Connexion.email" />" value="" />
+	                    <p id="textExist" class="text-danger" style="display:none;"><i class="fas fa-exclamation-circle"></i> Cette adresse mail est déjà utilisée</p>
 	                </div>
 	                <div class="form-group">
 	                    <input type="password" class="form-control" required id="mdp" placeholder="<s:text name="Connexion.motDePasse" />" value="" />
@@ -87,6 +99,9 @@ var inscription = function(e) {
 	        </div>
 		</div>
 	</div>
+	<form id="redirect" action="connexion.action" method="POST">
+		<input id="mailHidden" type="hidden" name="mail" value="">
+	</form>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
