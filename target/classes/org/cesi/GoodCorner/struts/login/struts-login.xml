@@ -9,5 +9,12 @@
 		<action name="connexion" method="connexion" class="org.cesi.GoodCorner.struts.login.LoginAction">
             <result name="success">/WEB-INF/login/login.jsp</result>
         </action>
+        <action name="inscription" method="inscription" class="org.cesi.GoodCorner.struts.login.LoginAction">
+            <result name="success">/WEB-INF/login/inscription.jsp</result>
+        </action>
+        <action name="seConnecter" method="seConnecter" class="org.cesi.GoodCorner.struts.login.LoginAction">
+        </action>
+        <action name="sinscrire" method="sinscrire" class="org.cesi.GoodCorner.struts.login.LoginAction">
+        </action>
 	</package>
 </struts>
