@@ -7,18 +7,37 @@
 
 <link rel="stylesheet" href="<s:url value="/css/connexion.css" />">
 <script type="text/javascript">
-
+var changeTypeAnnonce = function(e, value) {
+	$('#typeAnnonce').attr('value', value);
+	$('#changeListAnnonce').submit();
+***REMOVED***
 </script>
 <body>
 	<jsp:include page="../navbar.jsp"></jsp:include>
-	
+	<s:form action="list" method="get" id="changeListAnnonce">
+		<input type="hidden" name="idTypeAnnonce" id="typeAnnonce">
+	</s:form>
 	<!-- Page Content -->
   <div class="container">
 
     <div class="row">
 
       <div class="col-lg-3 my-4">
-      
+      	<div class="my-4">
+      		<label for="typeAnnonce">Type d'annonce</label>
+		 	 <div class="form-group" id="groupTypeAnnonce">	                	
+	            <div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" onclick="changeTypeAnnonce(event, this.value)" name="annonce.typeAnnonce.id" name="typeAnnonce" id="offre" 
+				  <s:if test="idTypeAnnonce == 1">checked</s:if> value="1">
+				  <label class="form-check-label" for="offre">Offre</label>
+				</div>
+				<div class="form-check form-check-inline">
+				  <input class="form-check-input" type="radio" onclick="changeTypeAnnonce(event, this.value)" name="annonce.typeAnnonce.id" id="demande" 
+				  <s:if test="idTypeAnnonce == 2">checked</s:if> value="2">
+				  <label class="form-check-label" for="demande">Demande</label>
+				</div>
+      		</div>
+      	</div>
         <div class="list-group mb-4">
         	<a href="<s:url value="list" />" class="list-group-item <s:if test="idCategorie == null || idCategorie == 0">active</s:if>">Tout</a>
         	<s:iterator value="listeCategorie" var="cat">

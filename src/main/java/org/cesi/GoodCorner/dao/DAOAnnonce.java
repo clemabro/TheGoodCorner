@@ -193,4 +193,95 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 		return annonces_list;
 ***REMOVED***
 
+	public List<Annonce> getByIdCategorieAndTypeAnnonce(Integer idCategorie, Integer idTypeAnnonce) {
+		// Definition of the list returned
+		List<Annonce> annonces_list = new ArrayList<Annonce>();
+	
+		// Declaration of the object used for the sql query
+		try {			
+			PreparedStatement pre = DAOPhoto.conn.prepareStatement("SELECT * FROM annonce WHERE id_Categorie = ? AND id_TypeAnnonce = ?");
+			pre.setInt(1, idCategorie);
+			pre.setInt(2, idTypeAnnonce);
+			
+			ResultSet cursor = pre.executeQuery();
+	
+			while (cursor.next()) {
+				Utilisateur user = new DAOUtilisateur().getByMail(cursor.getString("Mail"));
+				TypeAnnonce typeAnnonce = new DAOTypeAnnonce().getById(cursor.getInt("id_TypeAnnonce"));
+				Categorie cat = new DAOCategorie().getById(cursor.getInt("id_Categorie"));
+				Etat etat = new DAOEtat().getById(cursor.getInt("id_Etat"));
+				List<Photo> photosAnnonce = new DAOPhoto().getByIdAnnonce(cursor.getInt("id"));
+				
+				Annonce oneAnnonce = new Annonce(
+						cursor.getInt("id"), 
+						cursor.getString("titre"),
+						cursor.getString("description"),
+						cursor.getInt("prix"),
+						cursor.getString("ville"),
+						cursor.getDate("dateCreation"),
+						cursor.getDate("dateUpdate"),
+						user,
+						typeAnnonce,
+						cat,
+						etat,
+						photosAnnonce
+						);
+
+				annonces_list.add(oneAnnonce);
+***REMOVED***
+			cursor.close();
+			pre.close();
+	
+***REMOVED*** catch (SQLException e) {
+			e.printStackTrace();
+***REMOVED***
+	
+		return annonces_list;
+***REMOVED***
+
+	public List<Annonce> getAllByTypeAnnonce(Integer idTypeAnnonce) {
+		// Definition of the list returned
+		List<Annonce> annonces_list = new ArrayList<Annonce>();
+	
+		// Declaration of the object used for the sql query
+		try {			
+			PreparedStatement pre = DAOPhoto.conn.prepareStatement("SELECT * FROM annonce WHERE id_TypeAnnonce = ?");
+			pre.setInt(1, idTypeAnnonce);
+			
+			ResultSet cursor = pre.executeQuery();
+	
+			while (cursor.next()) {
+				Utilisateur user = new DAOUtilisateur().getByMail(cursor.getString("Mail"));
+				TypeAnnonce typeAnnonce = new DAOTypeAnnonce().getById(cursor.getInt("id_TypeAnnonce"));
+				Categorie cat = new DAOCategorie().getById(cursor.getInt("id_Categorie"));
+				Etat etat = new DAOEtat().getById(cursor.getInt("id_Etat"));
+				List<Photo> photosAnnonce = new DAOPhoto().getByIdAnnonce(cursor.getInt("id"));
+				
+				Annonce oneAnnonce = new Annonce(
+						cursor.getInt("id"), 
+						cursor.getString("titre"),
+						cursor.getString("description"),
+						cursor.getInt("prix"),
+						cursor.getString("ville"),
+						cursor.getDate("dateCreation"),
+						cursor.getDate("dateUpdate"),
+						user,
+						typeAnnonce,
+						cat,
+						etat,
+						photosAnnonce
+						);
+
+				annonces_list.add(oneAnnonce);
+***REMOVED***
+			cursor.close();
+			pre.close();
+	
+***REMOVED*** catch (SQLException e) {
+			e.printStackTrace();
+***REMOVED***
+	
+		return annonces_list;
+***REMOVED***
+
 ***REMOVED***

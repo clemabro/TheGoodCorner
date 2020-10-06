@@ -3,16 +3,22 @@
 <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
    <div class="container">
-     <a class="navbar-brand" href="<s:url value="list.action" namespace="/annonces"/>">The Good Corner</a>
-     <ul class="navbar-nav">
-	     <li class="nav-item">
-	      	<a class="nav-link ml-4" href="#"><i class="fas fa-search"></i>  Rechercher</a>
-	     </li>
-     </ul>
+   	 <s:url value="list.action" namespace="/annonces" var="urlList">
+   	 	<s:param name="idTypeAnnonce" value="1" />
+   	 </s:url>
+     <a class="navbar-brand" href="<s:if test="#session['userMail'] != null"><s:property value="urlList" /></s:if>">The Good Corner</a>
+     <s:if test="#session['userMail'] != null">
+	     <ul class="navbar-nav">
+		     <li class="nav-item">
+		      	<a class="nav-link ml-4" href="#"><i class="fas fa-search"></i>  Rechercher</a>
+		     </li>
+	     </ul>
+     </s:if>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
        <span class="navbar-toggler-icon"></span>
      </button>
-     <div class="collapse navbar-collapse" id="navbarResponsive"> 
+     <div class="collapse navbar-collapse" id="navbarResponsive">
+     	<s:if test="#session['userMail'] != null">
        <ul class="navbar-nav ml-auto">
        	 <li class="nav-item">
            	<a class="nav-link" href="<s:url value="create.action" namespace="/annonces"/>"><i class="far fa-plus-square"></i>  Déposer une annonce</a>
@@ -26,6 +32,7 @@
            	</s:if>
          </li>
        </ul>
+       </s:if>
      </div>
    </div>
  </nav>

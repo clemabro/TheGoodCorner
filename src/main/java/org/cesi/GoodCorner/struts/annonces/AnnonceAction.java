@@ -26,6 +26,7 @@ public class AnnonceAction extends ActionSupport {
 	private Categorie selectedCat;
 	private Annonce annonce;
 	private Integer idAnnonce;
+	private Integer idTypeAnnonce;
 
 	public String list() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -33,11 +34,11 @@ public class AnnonceAction extends ActionSupport {
 		
 		if(userMail != null) {
 			listeCategorie = new DAOCategorie().getAll();
-			if(idCategorie != null && !idCategorie.equals(0)) {
-				listeAnnonces = new DAOAnnonce().getByIdCategorie(idCategorie);
+			if(idCategorie != null && !idCategorie.equals(0) && idTypeAnnonce != null && !idTypeAnnonce.equals(0)) {
+				listeAnnonces = new DAOAnnonce().getByIdCategorieAndTypeAnnonce(idCategorie, idTypeAnnonce);
 				selectedCat = new DAOCategorie().getById(idCategorie);
 ***REMOVED*** else {
-				listeAnnonces = new DAOAnnonce().getAll();
+				listeAnnonces = new DAOAnnonce().getAllByTypeAnnonce(idTypeAnnonce);
 ***REMOVED***
 			
 			return SUCCESS;
@@ -140,5 +141,13 @@ public class AnnonceAction extends ActionSupport {
 
 	public void setIdAnnonce(Integer idAnnonce) {
 		this.idAnnonce = idAnnonce;
+***REMOVED***
+
+	public Integer getIdTypeAnnonce() {
+		return idTypeAnnonce;
+***REMOVED***
+
+	public void setIdTypeAnnonce(Integer idTypeAnnonce) {
+		this.idTypeAnnonce = idTypeAnnonce;
 ***REMOVED***
 ***REMOVED***

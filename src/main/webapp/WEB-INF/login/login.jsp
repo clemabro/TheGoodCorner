@@ -88,6 +88,7 @@ var seConnecter = function(e) {
 		</div>
 	</div>
 	<s:form id="redirectList" action="list" namespace="/annonces">
+		<input type="hidden" name="idTypeAnnonce" value="1">
 	</s:form>
 	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
