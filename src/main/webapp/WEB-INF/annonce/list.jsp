@@ -45,13 +45,16 @@
       </h3>
         <div class="row">        	
         	<s:iterator value="listeAnnonces" var="annonce">
+        		<s:url value="consult" method="get" var="urlAnnonce">
+        			<s:param name="idAnnonce" value="#annonce.id" />
+        		</s:url>
         		<div class="col-lg-4 col-md-6 mb-4 my-4">
 		            <div class="card h-100">
-		              <a href="#"><img class="card-img-top" src="<s:url value="%{#annonce.listePhotos.get(0).chemin***REMOVED***" />" 
+		              <a href="<s:property value="#urlAnnonce"/>"><img class="card-img-top" src="<s:url value="%{#annonce.listePhotos.get(0).chemin***REMOVED***" />" 
 		              	alt="" onError="$(this).attr('src','<s:url value="/img/not-found.png"/>')"></a>
 		              <div class="card-body">
 		                <h4 class="card-title">
-		                  <a href="#"><s:property value="titre"/></a>
+		                  <a href="<s:property value="#urlAnnonce"/>"><s:property value="titre"/></a>
 		                </h4>
 		                <h5><s:property value="prix"/> €</h5>
 		                <p class="card-text">

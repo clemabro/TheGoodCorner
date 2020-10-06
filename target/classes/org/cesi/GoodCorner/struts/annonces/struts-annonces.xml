@@ -20,6 +20,7 @@
         </action>
         
         <action name="consult" method="consult" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        	<result name="success">/WEB-INF/annonce/consult.jsp</result>
         </action>
 	</package>
 </struts>

@@ -20,7 +20,43 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 
 	@Override
 	public Annonce getById(Integer id) {
-		// TODO Auto-generated method stub
+		try {
+			PreparedStatement pre = DAOTypeAnnonce.conn.prepareStatement("SELECT * FROM annonce WHERE id = ?");
+			pre.setInt(1, id);
+			
+			ResultSet cursor = pre.executeQuery();
+			
+			if (cursor.first()) {
+				
+				Utilisateur user = new DAOUtilisateur().getByMail(cursor.getString("Mail"));
+				TypeAnnonce typeAnnonce = new DAOTypeAnnonce().getById(cursor.getInt("id_TypeAnnonce"));
+				Categorie cat = new DAOCategorie().getById(cursor.getInt("id_Categorie"));
+				Etat etat = new DAOEtat().getById(cursor.getInt("id_Etat"));
+				List<Photo> photosAnnonce = new DAOPhoto().getByIdAnnonce(cursor.getInt("id"));
+				
+				Annonce oneAnnonce = new Annonce(
+						cursor.getInt("id"), 
+						cursor.getString("titre"),
+						cursor.getString("description"),
+						cursor.getInt("prix"),
+						cursor.getString("ville"),
+						cursor.getDate("dateCreation"),
+						cursor.getDate("dateUpdate"),
+						user,
+						typeAnnonce,
+						cat,
+						etat,
+						photosAnnonce
+						);
+				
+				return oneAnnonce;
+***REMOVED***
+***REMOVED***
+
+		catch (SQLException e) {
+			e.printStackTrace();
+***REMOVED***
+		
 		return null;
 ***REMOVED***
 
@@ -69,7 +105,7 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 
 			Statement query = DAOAnnonce.conn.createStatement();
 
-			ResultSet cursor = query.executeQuery("SELECT * FROM annonce ORDER BY dateCreation DESC");
+			ResultSet cursor = query.executeQuery("SELECT * FROM annonce ORDER BY id DESC");
 
 			while (cursor.next()) {
 				Utilisateur user = new DAOUtilisateur().getByMail(cursor.getString("Mail"));
