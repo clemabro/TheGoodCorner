@@ -44,6 +44,8 @@ public class LoginAction extends ActionSupport {
 					jsObject.put("mdpOK", true);
 					HttpSession session = request.getSession();
 					session.setAttribute("userMail", user.getMail());
+					session.setAttribute("userNom", user.getNom());
+					session.setAttribute("userPrenom", user.getPrenom());
 	***REMOVED*** else {
 					jsObject.put("mdpOK", false);
 	***REMOVED***
