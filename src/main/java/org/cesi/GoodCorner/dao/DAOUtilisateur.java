@@ -28,11 +28,11 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 				TypeUtilisateur typeUser = new DAOTypeUtilisateur().getById(result.getInt("id_TypeUtilisateur"));
 				
 				Utilisateur oneUser = new Utilisateur(
-						result.getString("Mail"), 
-						result.getString("telephone"),
+						result.getString("Mail"),
+						result.getString("MotDePasse"),
 						result.getString("nom"),
 						result.getString("prenom"),
-						result.getString("nom"),
+						result.getString("telephone"),
 						typeUser
 						);
 
@@ -52,13 +52,14 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 		try {
 			PreparedStatement prepare = DAOUtilisateur.conn
 					.prepareStatement("INSERT INTO utilisateur"
-									+ " VALUES (?, ?, ?, ?, ?)");
+									+ " VALUES (?, ?, ?, ?, ?, ?)");
 			
 			prepare.setString(1, bean.getMail());
 			prepare.setString(2, bean.getTelephone());
-			prepare.setString(3, bean.getNom());
-			prepare.setString(4, bean.getPrenom());
-			prepare.setInt(5, bean.getTypeUtilisateur().getId());
+			prepare.setString(3, bean.getMotDePasse());
+			prepare.setString(4, bean.getNom());
+			prepare.setString(5, bean.getPrenom());
+			prepare.setInt(6, bean.getTypeUtilisateur().getId());
 
 			prepare.executeUpdate();
 			

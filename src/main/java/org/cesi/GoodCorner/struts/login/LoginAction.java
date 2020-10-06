@@ -3,7 +3,9 @@ package org.cesi.GoodCorner.struts.login;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.cesi.GoodCorner.dao.DAOUtilisateur;
@@ -12,7 +14,7 @@ import org.json.JSONObject;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport {
 ***REMOVED***
 	 * 
 ***REMOVED***
@@ -27,7 +29,35 @@ public class LoginAction extends ActionSupport{
 		return SUCCESS;
 ***REMOVED***
 	
-	public String seConnecter() {
+	public String seConnecter() throws IOException {
+		HttpServletResponse response = ServletActionContext.getResponse();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		DAOUtilisateur user_dao = new DAOUtilisateur();
+		
+		JSONObject jsObject = new JSONObject();
+		if(userToCreate != null) {
+			Utilisateur user =  user_dao.getByMail(userToCreate.getMail());
+			if(user != null) {
+				jsObject.put("exist", true);
+				
+				if(user.getMotDePasse().equals(userToCreate.getMotDePasse())) {
+					jsObject.put("mdpOK", true);
+					HttpSession session = request.getSession();
+					session.setAttribute("userMail", user.getMail());
+	***REMOVED*** else {
+					jsObject.put("mdpOK", false);
+	***REMOVED***
+***REMOVED*** else {
+				jsObject.put("exist", false);
+***REMOVED***
+			
+***REMOVED*** else {
+			jsObject.put("exist", false);
+***REMOVED***
+		
+		PrintWriter out = response.getWriter();
+		jsObject.write(out);
+		
 		return null;
 ***REMOVED***
 	

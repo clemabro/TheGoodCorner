@@ -43,6 +43,7 @@ CREATE TABLE TypeUtilisateur(
 CREATE TABLE Utilisateur(
         Mail      Varchar (50) NOT NULL ,
         Telephone Varchar (50) NOT NULL ,
+		MotDePasse Varchar (255) NOT NULL,
         Nom       Varchar (50) NOT NULL ,
         Prenom    Varchar (50) NOT NULL ,
         id        Int NOT NULL
