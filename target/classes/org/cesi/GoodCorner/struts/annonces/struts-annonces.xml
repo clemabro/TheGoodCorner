@@ -8,5 +8,18 @@
             <result name="success">/WEB-INF/annonce/list.jsp</result>
             <result name="denied">/WEB-INF/403.jsp</result>
         </action>
+        
+        <action name="create" method="create" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        	<result name="success">/WEB-INF/annonce/create.jsp</result>
+            <result name="denied">/WEB-INF/403.jsp</result>
+        </action>
+        
+        <action name="saveAnnonce" method="saveAnnonce" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        	<result name="success" type="redirectAction">list</result>
+            <result name="denied">/WEB-INF/403.jsp</result>
+        </action>
+        
+        <action name="consult" method="consult" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        </action>
 	</package>
 </struts>

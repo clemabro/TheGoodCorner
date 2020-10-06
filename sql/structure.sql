@@ -71,7 +71,7 @@ CREATE TABLE TypeAnnonce(
 CREATE TABLE Annonce(
         id             Int  Auto_increment  NOT NULL ,
         titre          Varchar (50) NOT NULL ,
-        description    Varchar (50) NOT NULL ,
+        description    Varchar (255) NOT NULL ,
         prix           Float NOT NULL ,
         ville          Varchar (50) NOT NULL ,
         dateCreation   Datetime NOT NULL ,

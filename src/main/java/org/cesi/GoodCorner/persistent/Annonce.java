@@ -1,12 +1,13 @@
 package org.cesi.GoodCorner.persistent;
 
 import java.util.Date;
+import java.util.List;
 
 public class Annonce {
 	private Integer id;
 	private String titre;
 	private String description;
-	private Double prix;
+	private Integer prix;
 	private String ville;
 	private Date dateCreation;
 	private Date dateUpdate;
@@ -14,6 +15,7 @@ public class Annonce {
 	private TypeAnnonce typeAnnonce;
 	private Categorie categorie;
 	private Etat etat;
+	private List<Photo> listePhotos;
 	
 ***REMOVED***
 	 * @param id
@@ -28,8 +30,8 @@ public class Annonce {
 	 * @param categorie
 	 * @param etat
 ***REMOVED***
-	public Annonce(Integer id, String titre, String description, Double prix, String ville, Date dateCreation,
-			Date dateUpdate, Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat) {
+	public Annonce(Integer id, String titre, String description, Integer prix, String ville, Date dateCreation,
+			Date dateUpdate, Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat, List<Photo> listePhotos) {
 		this.id = id;
 		this.titre = titre;
 		this.description = description;
@@ -41,6 +43,7 @@ public class Annonce {
 		this.typeAnnonce = typeAnnonce;
 		this.categorie = categorie;
 		this.etat = etat;
+		this.listePhotos = listePhotos;
 ***REMOVED***
 	
 ***REMOVED***
@@ -55,8 +58,8 @@ public class Annonce {
 	 * @param categorie
 	 * @param etat
 ***REMOVED***
-	public Annonce(String titre, String description, Double prix, String ville, Date dateCreation, Date dateUpdate,
-			Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat) {
+	public Annonce(String titre, String description, Integer prix, String ville, Date dateCreation, Date dateUpdate,
+			Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat, List<Photo> listePhotos) {
 		this.titre = titre;
 		this.description = description;
 		this.prix = prix;
@@ -67,6 +70,7 @@ public class Annonce {
 		this.typeAnnonce = typeAnnonce;
 		this.categorie = categorie;
 		this.etat = etat;
+		this.listePhotos = listePhotos;
 ***REMOVED***
 	
 ***REMOVED***
@@ -99,11 +103,11 @@ public class Annonce {
 		this.description = description;
 ***REMOVED***
 
-	public Double getPrix() {
+	public double getPrix() {
 		return prix;
 ***REMOVED***
 
-	public void setPrix(Double prix) {
+	public void setPrix(Integer prix) {
 		this.prix = prix;
 ***REMOVED***
 
@@ -161,5 +165,13 @@ public class Annonce {
 
 	public void setEtat(Etat etat) {
 		this.etat = etat;
+***REMOVED***
+
+	public List<Photo> getListePhotos() {
+		return listePhotos;
+***REMOVED***
+
+	public void setListePhotos(List<Photo> listePhotos) {
+		this.listePhotos = listePhotos;
 ***REMOVED***
 ***REMOVED***

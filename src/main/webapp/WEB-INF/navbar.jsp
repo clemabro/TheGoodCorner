@@ -15,7 +15,7 @@
      <div class="collapse navbar-collapse" id="navbarResponsive"> 
        <ul class="navbar-nav ml-auto">
        	 <li class="nav-item">
-           	<a class="nav-link" href="#"><i class="far fa-plus-square"></i>  Déposer une annonce</a>
+           	<a class="nav-link" href="<s:url value="create.action" namespace="/annonces"/>"><i class="far fa-plus-square"></i>  Déposer une annonce</a>
          </li>
          <li class="nav-item">
            	<a class="nav-link" href="#"><i class="far fa-heart"></i>  Mes favoris</a>

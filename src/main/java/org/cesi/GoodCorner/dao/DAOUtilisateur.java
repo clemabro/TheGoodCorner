@@ -3,7 +3,6 @@
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 ***REMOVED***
-import java.sql.Statement;
 import java.util.List;
 
 import org.cesi.GoodCorner.persistent.TypeUtilisateur;

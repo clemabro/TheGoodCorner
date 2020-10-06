@@ -1,5 +1,6 @@
 ***REMOVED***
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 ***REMOVED***
 import java.sql.Statement;
@@ -12,7 +13,27 @@ public class DAOCategorie implements DAO<Categorie, java.lang.Integer> {
 
 	@Override
 	public Categorie getById(Integer id) {
-		// TODO Auto-generated method stub
+		try {
+			PreparedStatement pre = DAOTypeAnnonce.conn.prepareStatement("SELECT * FROM categorie WHERE id = ?");
+			pre.setInt(1, id);
+			
+			ResultSet result = pre.executeQuery();
+			
+			if (result.first()) {
+				
+				Categorie cat = new Categorie(
+						result.getInt("id"),
+						result.getString("libelle")
+						);
+
+				return cat;
+***REMOVED***
+***REMOVED***
+
+		catch (SQLException e) {
+			e.printStackTrace();
+***REMOVED***
+		
 		return null;
 ***REMOVED***
 
@@ -41,7 +62,7 @@ public class DAOCategorie implements DAO<Categorie, java.lang.Integer> {
 			ResultSet cursor = query.executeQuery("SELECT * FROM categorie");
 
 			while (cursor.next()) {
-				Categorie oneCat = new Categorie(new Integer(cursor.getInt("id")), cursor.getString("libelle"));
+				Categorie oneCat = new Categorie(cursor.getInt("id"), cursor.getString("libelle"));
 
 				cat_list.add(oneCat);
 ***REMOVED***
