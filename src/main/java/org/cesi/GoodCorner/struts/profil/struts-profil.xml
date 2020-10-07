@@ -7,5 +7,11 @@
 		<action name="consult" method="consult" class="org.cesi.GoodCorner.struts.profil.ProfilAction">
             <result name="success">/WEB-INF/profil/consult.jsp</result>
         </action>
+        <action name="parametre" method="parametre" class="org.cesi.GoodCorner.struts.profil.ProfilAction">
+            <result name="success">/WEB-INF/profil/parametre.jsp</result>
+        </action>
+        <action name="saveProfil" method="saveProfil" class="org.cesi.GoodCorner.struts.profil.ProfilAction">
+        	<result name="success" type="redirectAction">consult</result>
+        </action>
 	</package>
 </struts>

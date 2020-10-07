@@ -72,8 +72,26 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 
 	@Override
 	public Utilisateur update(Utilisateur bean) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			PreparedStatement prepare = DAOUtilisateur.conn
+					.prepareStatement("UPDATE utilisateur"
+									+ " SET telephone = ?, motdepasse = ?, nom = ?, prenom = ?, id_TypeUtilisateur = ? WHERE mail = ?");
+			
+			
+			prepare.setString(1, bean.getTelephone());
+			prepare.setString(2, bean.getMotDePasse());
+			prepare.setString(3, bean.getNom());
+			prepare.setString(4, bean.getPrenom());
+			prepare.setInt(5, bean.getTypeUtilisateur().getId());
+			prepare.setString(6, bean.getMail());
+
+			prepare.executeUpdate();
+			
+			return bean;
+***REMOVED*** catch (SQLException e) {
+			e.printStackTrace();
+***REMOVED***
+		return bean;
 ***REMOVED***
 
 	@Override

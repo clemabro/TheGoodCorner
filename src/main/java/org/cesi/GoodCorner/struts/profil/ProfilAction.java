@@ -1,6 +1,7 @@
 package org.cesi.GoodCorner.struts.profil;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.cesi.GoodCorner.dao.DAOUtilisateur;
@@ -26,6 +27,39 @@ public class ProfilAction extends ActionSupport {
 			return SUCCESS;
 ***REMOVED*** else {
 			return "denied";
+***REMOVED***
+***REMOVED***
+	
+	public String parametre() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String userMail = (String) request.getSession().getAttribute("userMail");
+		
+		if(userMail != null) {
+			user = new DAOUtilisateur().getByMail(userMail);
+			
+			return SUCCESS;
+***REMOVED*** else {
+			return "denied";
+***REMOVED***
+***REMOVED***
+	
+	public String saveProfil() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String userMail = (String) request.getSession().getAttribute("userMail");
+		
+		if(userMail != null) {
+			user.setMail(userMail);
+			if(user != null && user.getMail() != null && !user.getMail().isEmpty()) {
+				new DAOUtilisateur().update(user);
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("userNom", user.getNom());
+				session.setAttribute("userPrenom", user.getPrenom());
+***REMOVED***
+			
+			return SUCCESS;
+***REMOVED*** else {
+			return ERROR;
 ***REMOVED***
 ***REMOVED***
 

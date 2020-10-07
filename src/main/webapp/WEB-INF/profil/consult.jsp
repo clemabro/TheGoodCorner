@@ -12,16 +12,18 @@
 <body>
 	<jsp:include page="../navbar.jsp"></jsp:include>
 	
-	<div class="row justify-content-center">
+	<div class="row justify-content-center my-4">
 		<div class="col-md-6 login-form">
-			<h3 class="my-4"><s:property value="user.nom" /> <s:property value="user.prenom" /></h3>
+			<h3 class="my-4"><s:property value="user.prenom" /> <s:property value="user.nom" /></h3>
 			<hr>
 			<div class="row justify-content-center">
 				<div class="col-4">
 					<button type="button" class="btn btn-outline-primary"><i class="far fa-file"></i> Mes annonces</button>
 				</div>
 				<div class="col-4">
-					<button type="button" class="btn btn-outline-primary"><i class="fas fa-cogs"></i> Paramètres</button>
+					<s:form action="parametre" namespace="/profil">
+						<button type="submit" class="btn btn-outline-primary"><i class="fas fa-cogs"></i> Paramètres</button>
+					</s:form>
 				</div>
 			</div>
 			<hr>

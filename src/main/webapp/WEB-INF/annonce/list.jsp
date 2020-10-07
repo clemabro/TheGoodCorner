@@ -41,8 +41,9 @@ var changeTypeAnnonce = function(e, value) {
         <div class="list-group mb-4">
         	<a href="<s:url value="list" />" class="list-group-item <s:if test="idCategorie == null || idCategorie == 0">active</s:if>">Tout</a>
         	<s:iterator value="listeCategorie" var="cat">
-        		<s:url value="list" method="get" var="urlCat">
+        		<s:url value="list" method="get" var="urlCat" escapeAmp="false">
 	        		<s:param name="idCategorie" value="#cat.id" />
+	        		<s:param name="idTypeAnnonce" value="%{idTypeAnnonce***REMOVED***"></s:param>
 	       		</s:url>
         		<a href="<s:property value="#urlCat"/>" class="list-group-item
         		<s:if test="idCategorie == #cat.id">active</s:if>

@@ -12,7 +12,7 @@
 <body>
 	<jsp:include page="../navbar.jsp"></jsp:include>
 	
-	<div class="row justify-content-center">
+	<div class="row justify-content-center my-4">
 		<div class="col-md-6 login-form">
 			<h3 class="my-4">Déposer une annonce</h3>
 			<s:form action="saveAnnonce" namespace="/annonces">
