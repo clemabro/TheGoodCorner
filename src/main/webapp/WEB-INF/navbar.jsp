@@ -28,7 +28,7 @@
          </li>
          <li class="nav-item">
          	<s:if test="#session['userMail'] != null">
-           		<a class="nav-link" href="<s:url value="/profil/consult.action"/>"><i class="far fa-user"></i>  ${ sessionScope.userPrenom ***REMOVED*** ${ sessionScope.userNom ***REMOVED***</a>
+           		<a class="nav-link" href="<s:url value="/profil/consult.action"/>"><i class="far fa-user"></i>  ${ sessionScope.userPrenom } ${ sessionScope.userNom }</a>
            	</s:if>
          </li>
        </ul>

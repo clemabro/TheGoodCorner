@@ -16,7 +16,7 @@
 		<div class="col-md-6 login-form">
 			<h3 class="my-4"><s:property value="annonce.titre" /></h3>
 			<div class="row">
-				<img src="<s:url value="%{annonce.listePhotos.get(0).chemin***REMOVED***" />" class="img-fluid" alt="" onerror="$(this).attr('src','<s:url value="/img/not-found.png"/>')">
+				<img src="<s:url value="%{annonce.listePhotos.get(0).chemin}" />" class="img-fluid" alt="" onerror="$(this).attr('src','<s:url value="/img/not-found.png"/>')">
 			</div>
 			<div class="row justify-content-between">
 				<p><s:property value="annonce.prix" /> €</p><p>Créé le <s:property value="annonce.dateCreation" /> par <s:property value="annonce.utilisateur.nom" /> <s:property value="annonce.utilisateur.prenom" /></p>

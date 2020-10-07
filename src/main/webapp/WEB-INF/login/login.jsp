@@ -9,7 +9,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
-***REMOVED***);
+});
 
 var seConnecter = function(e) {
 	e.preventDefault();
@@ -24,11 +24,11 @@ var seConnecter = function(e) {
 	
 	if($('#email').val() == "") {
 		$('#email').addClass("inputRequired")
-***REMOVED*** else if($('#mdp').val() == "") {
+	} else if($('#mdp').val() == "") {
 		$('#mdp').addClass("inputRequired")
-***REMOVED*** else {
+	} else {
 		mailAndMdpEmpty = true;
-***REMOVED***
+	}
 	
 	if(mailAndMdpEmpty) {
 		$.ajax({
@@ -37,7 +37,7 @@ var seConnecter = function(e) {
 			data : {
 				"userToCreate.mail" : $('#email').val(),
 				"userToCreate.motDePasse" : $('#mdp').val()
-***REMOVED***,
+			},
 			success: function(data) {
 				console.log(data);
 				
@@ -46,17 +46,17 @@ var seConnecter = function(e) {
 				if(obj.exist) {
 					if(obj.mdpOK) {
 						$('#redirectList').submit();
-		***REMOVED*** else {
+					} else {
 						$('#mdpExist').show();
 						$('#mdp').addClass("inputRequired")
-		***REMOVED***
-	***REMOVED*** else {
+					}
+				} else {
 					$('#mailExist').show();
-	***REMOVED***
-***REMOVED***
-***REMOVED***)
-***REMOVED***
-***REMOVED***
+				}	
+			}
+		})
+	}
+}
 
 </script>
 <body>

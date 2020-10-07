@@ -1,8 +1,8 @@
-***REMOVED***
+package org.cesi.GoodCorner.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-***REMOVED***
+import java.sql.SQLException;
 import java.util.List;
 
 import org.cesi.GoodCorner.persistent.TypeUtilisateur;
@@ -14,7 +14,7 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 	public Utilisateur getById(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 	
 	public Utilisateur getByMail(String mail) {
 		try {
@@ -36,15 +36,15 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 						);
 
 				return oneUser;
-***REMOVED***
-***REMOVED***
+			}
+		}
 
 		catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public Utilisateur create(Utilisateur bean) {
@@ -63,12 +63,12 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 			prepare.executeUpdate();
 			
 			return bean;
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		return bean;
 
-***REMOVED***
+	}
 
 	@Override
 	public Utilisateur update(Utilisateur bean) {
@@ -88,22 +88,22 @@ public class DAOUtilisateur implements DAO<Utilisateur, java.lang.Integer>{
 			prepare.executeUpdate();
 			
 			return bean;
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		return bean;
-***REMOVED***
+	}
 
 	@Override
 	public List<Utilisateur> getAll() {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
-***REMOVED***
+	}
 
-***REMOVED***
+}

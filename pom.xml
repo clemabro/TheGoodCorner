@@ -19,31 +19,31 @@
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
-            <version>${struts2.version***REMOVED***</version>
+            <version>${struts2.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-config-browser-plugin</artifactId>
-            <version>${struts2.version***REMOVED***</version>
+            <version>${struts2.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>${log4j2.version***REMOVED***</version>
+            <version>${log4j2.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>${log4j2.version***REMOVED***</version>
+            <version>${log4j2.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-junit-plugin</artifactId>
-            <version>${struts2.version***REMOVED***</version>
+            <version>${struts2.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -78,7 +78,7 @@
 		<dependency>
 	       <groupId>org.apache.struts</groupId>
 	       <artifactId>struts2-json-plugin</artifactId>
-	       <version>${struts2.version***REMOVED***</version>
+	       <version>${struts2.version}</version>
 	   </dependency>
 	   
 	   <!-- https://mvnrepository.com/artifact/org.json/json -->
@@ -111,9 +111,9 @@
                     <stopKey>CTRL+C</stopKey>
                     <stopPort>8999</stopPort>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <webAppSourceDirectory>${basedir***REMOVED***/src/main/webapp/</webAppSourceDirectory>
+                    <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
                     <webAppConfig>
-                        <descriptor>${basedir***REMOVED***/src/main/webapp/WEB-INF/web.xml</descriptor>
+                        <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
                     </webAppConfig>
                 </configuration>
             </plugin>

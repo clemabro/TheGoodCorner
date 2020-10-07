@@ -7,5 +7,5 @@
 	<link href="<s:url value="/css/main.css"/>" rel="stylesheet" type="text/css">
 	<script src="<s:url value="/js/jquery.min.js"/>" ></script>
     <script src="<s:url value="/js/bootstrap.bundle.min.js"/>" ></script>
-    <title>${param.title***REMOVED***</title>
+    <title>${param.title}</title>
 </head>
