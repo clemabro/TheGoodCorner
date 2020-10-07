@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="annonces" namespace="/annonces" extends="struts-default">
+		<action name="list" method="list" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+            <result name="success">/WEB-INF/annonce/list.jsp</result>
+            <result name="denied">/WEB-INF/403.jsp</result>
+        </action>
+        
+        <action name="create" method="create" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        	<result name="success">/WEB-INF/annonce/create.jsp</result>
+            <result name="denied">/WEB-INF/403.jsp</result>
+        </action>
+        
+        <action name="saveAnnonce" method="saveAnnonce" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        	<result name="success" type="redirectAction">list</result>
+            <result name="denied">/WEB-INF/403.jsp</result>
+        </action>
+        
+        <action name="consult" method="consult" class="org.cesi.GoodCorner.struts.annonces.AnnonceAction">
+        	<result name="success">/WEB-INF/annonce/consult.jsp</result>
+        </action>
+	</package>
+</struts>

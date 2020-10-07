@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="connexion" namespace="/connexion" extends="struts-default">
+		<default-action-ref name="connexion" />
+		
+		<action name="connexion" method="connexion" class="org.cesi.GoodCorner.struts.login.LoginAction">
+            <result name="success">/WEB-INF/login/login.jsp</result>
+            <result name="list" type="redirectAction">
+            	<param name="actionName">list</param>
+            	<param name="namespace">/annonces</param>
+            	<param name="idTypeAnnonce">1</param>
+            </result>
+        </action>
+        <action name="inscription" method="inscription" class="org.cesi.GoodCorner.struts.login.LoginAction">
+            <result name="success">/WEB-INF/login/inscription.jsp</result>
+        </action>
+        <action name="seConnecter" method="seConnecter" class="org.cesi.GoodCorner.struts.login.LoginAction">
+        </action>
+        <action name="sinscrire" method="sinscrire" class="org.cesi.GoodCorner.struts.login.LoginAction">
+        </action>
+        <action name="deconnexion" method="deconnexion" class="org.cesi.GoodCorner.struts.login.LoginAction">
+        	<result name="success" type="redirectAction">connexion</result>
+        </action>
+	</package>
+</struts>
