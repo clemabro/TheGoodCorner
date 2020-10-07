@@ -15,9 +15,9 @@ import org.json.JSONObject;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class LoginAction extends ActionSupport {
-***REMOVED***
+	/**
 	 * 
-***REMOVED***
+	 */
 	private static final long serialVersionUID = -2402013622636318013L;
 	private Utilisateur userToCreate;
 	private String mail;
@@ -28,13 +28,13 @@ public class LoginAction extends ActionSupport {
 		
 		if(userMail != null) {
 			return "list";
-***REMOVED***
+		}
 		
 		if(mail == null) {
 			setMail("");
-***REMOVED***
+		}
 		return SUCCESS;
-***REMOVED***
+	}
 	
 	public String seConnecter() throws IOException {
 		HttpServletResponse response = ServletActionContext.getResponse();
@@ -53,26 +53,26 @@ public class LoginAction extends ActionSupport {
 					session.setAttribute("userMail", user.getMail());
 					session.setAttribute("userNom", user.getNom());
 					session.setAttribute("userPrenom", user.getPrenom());
-	***REMOVED*** else {
+				} else {
 					jsObject.put("mdpOK", false);
-	***REMOVED***
-***REMOVED*** else {
+				}
+			} else {
 				jsObject.put("exist", false);
-***REMOVED***
+			}
 			
-***REMOVED*** else {
+		} else {
 			jsObject.put("exist", false);
-***REMOVED***
+		}
 		
 		PrintWriter out = response.getWriter();
 		jsObject.write(out);
 		
 		return null;
-***REMOVED***
+	}
 	
 	public String inscription() {		
 		return SUCCESS;
-***REMOVED***
+	}
 	
 	public String sinscrire() throws IOException {
 		HttpServletResponse response = ServletActionContext.getResponse();
@@ -85,16 +85,16 @@ public class LoginAction extends ActionSupport {
 			dao_user.create(userToCreate);
 			jsObject.put("Statut", "OK");
 			jsObject.put("mail", userToCreate.getMail());
-***REMOVED*** else {
+		} else {
 			jsObject.put("Statut", "EXIST");
-***REMOVED***
+		}
 		
 		
 		PrintWriter out = response.getWriter();
 		jsObject.write(out);
 		
 		return null;
-***REMOVED***
+	}
 	
 	public String deconnexion() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -106,27 +106,27 @@ public class LoginAction extends ActionSupport {
 			
 			if(mail == null) {
 				setMail("");
-***REMOVED***
+			}
 			
 			return SUCCESS;
-***REMOVED*** else {
+		} else {
 			return ERROR;
-***REMOVED***
-***REMOVED***
+		}
+	}
 
 	public Utilisateur getUserToCreate() {
 		return userToCreate;
-***REMOVED***
+	}
 
 	public void setUserToCreate(Utilisateur userToCreate) {
 		this.userToCreate = userToCreate;
-***REMOVED***
+	}
 
 	public String getMail() {
 		return mail;
-***REMOVED***
+	}
 
 	public void setMail(String mail) {
 		this.mail = mail;
-***REMOVED***
-***REMOVED***
+	}
+}

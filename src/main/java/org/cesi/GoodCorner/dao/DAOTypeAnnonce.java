@@ -1,8 +1,8 @@
-***REMOVED***
+package org.cesi.GoodCorner.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-***REMOVED***
+import java.sql.SQLException;
 import java.util.List;
 
 import org.cesi.GoodCorner.persistent.TypeAnnonce;
@@ -25,38 +25,38 @@ public class DAOTypeAnnonce implements DAO<TypeAnnonce, java.lang.Integer> {
 						);
 
 				return type;
-***REMOVED***
-***REMOVED***
+			}
+		}
 
 		catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public TypeAnnonce create(TypeAnnonce bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public TypeAnnonce update(TypeAnnonce bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public List<TypeAnnonce> getAll() {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
-***REMOVED***
+	}
 
-***REMOVED***
+}

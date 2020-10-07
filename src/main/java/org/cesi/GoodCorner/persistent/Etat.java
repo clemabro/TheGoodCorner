@@ -10,38 +10,38 @@ public class Etat {
 	private Integer id;
 	private String libelle;
 	
-***REMOVED***
+	/**
 	 * @param id
 	 * @param libelle
-***REMOVED***
+	 */
 	public Etat(Integer id, String libelle) {
 		this.id = id;
 		this.libelle = libelle;
-***REMOVED***
+	}
 	
-***REMOVED***
+	/**
 	 * @param libelle
-***REMOVED***
+	 */
 	public Etat(String libelle) {
 		this.libelle = libelle;
-***REMOVED***
+	}
 	
-***REMOVED***
+	/**
 	 * 
-***REMOVED***
+	 */
 	public Etat() {
-***REMOVED***
+	}
 	
 	public Integer getId() {
 		return id;
-***REMOVED***
+	}
 	public void setId(Integer id) {
 		this.id = id;
-***REMOVED***
+	}
 	public String getLibelle() {
 		return libelle;
-***REMOVED***
+	}
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
-***REMOVED***
-***REMOVED***
+	}
+}

@@ -1,7 +1,7 @@
-***REMOVED***
+package org.cesi.GoodCorner.dao;
 
 import java.io.Serializable;
-***REMOVED***
+import java.sql.Connection;
 import java.util.List;
 
 public interface DAO<T, KeyType extends Serializable> {
@@ -16,5 +16,5 @@ public interface DAO<T, KeyType extends Serializable> {
 	List<T> getAll();
 
 	void delete(KeyType id);
-***REMOVED***
+}
 

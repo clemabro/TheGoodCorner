@@ -9,7 +9,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
-***REMOVED***);
+});
 
 var inscription = function(e) {
 	e.preventDefault();
@@ -20,11 +20,11 @@ var inscription = function(e) {
 	
 	if($('#email').val() == "" || !$("#email").val().includes('@') || !$("#email").val().includes('.')) {
 		$('#email').addClass("inputRequired")
-***REMOVED*** else if($('#mdp').val() == "") {
+	} else if($('#mdp').val() == "") {
 		$('#mdp').addClass("inputRequired")
-***REMOVED*** else {
+	} else {
 		mailAndMdpEmpty = true;
-***REMOVED***
+	}
 	
 	if(mailAndMdpEmpty) {
 		$.ajax({
@@ -37,22 +37,22 @@ var inscription = function(e) {
 				"userToCreate.prenom" : $('#prenom').val(),
 				"userToCreate.telephone" : $('#tel').val(),
 				"userToCreate.typeUtilisateur.id" : $('#groupTypeUser').find('input:checked').val()
-***REMOVED***,
+			},
 			success: function(data) {
 				
 				obj = JSON.parse(data);
 				
 				if(obj.Statut == "EXIST") {
 					$('#textExist').show();
-	***REMOVED*** else {
+				} else {
 					$('#mailHidden').attr('value', obj.mail);
 				
 					$('#redirect').submit();
-	***REMOVED***
-***REMOVED***
-***REMOVED***)
-***REMOVED***
-***REMOVED***
+				}
+			}
+		})
+	}
+}
 
 </script>
 <body>

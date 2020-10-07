@@ -10,7 +10,7 @@
 var changeTypeAnnonce = function(e, value) {
 	$('#typeAnnonce').attr('value', value);
 	$('#changeListAnnonce').submit();
-***REMOVED***
+}
 </script>
 <body>
 	<jsp:include page="../navbar.jsp"></jsp:include>
@@ -40,13 +40,13 @@ var changeTypeAnnonce = function(e, value) {
       	</div>
         <div class="list-group mb-4">
         	<s:url value="list" var="urlTout">
-        		<s:param name="idTypeAnnonce" value="%{idTypeAnnonce***REMOVED***"></s:param>
+        		<s:param name="idTypeAnnonce" value="%{idTypeAnnonce}"></s:param>
         	</s:url>
         	<a href="<s:property value="urlTout" />" class="list-group-item <s:if test="idCategorie == null || idCategorie == 0">active</s:if>">Tout</a>
         	<s:iterator value="listeCategorie" var="cat">
         		<s:url value="list" method="get" var="urlCat" escapeAmp="false">
 	        		<s:param name="idCategorie" value="#cat.id" />
-	        		<s:param name="idTypeAnnonce" value="%{idTypeAnnonce***REMOVED***"></s:param>
+	        		<s:param name="idTypeAnnonce" value="%{idTypeAnnonce}"></s:param>
 	       		</s:url>
         		<a href="<s:property value="#urlCat"/>" class="list-group-item
         		<s:if test="idCategorie == #cat.id">active</s:if>
@@ -73,7 +73,7 @@ var changeTypeAnnonce = function(e, value) {
         		</s:url>
         		<div class="col-lg-4 col-md-6 mb-4 my-4">
 		            <div class="card h-100">
-		              <a href="<s:property value="#urlAnnonce"/>"><img class="card-img-top" src="<s:url value="%{#annonce.listePhotos.get(0).chemin***REMOVED***" />" 
+		              <a href="<s:property value="#urlAnnonce"/>"><img class="card-img-top" src="<s:url value="%{#annonce.listePhotos.get(0).chemin}" />" 
 		              	alt="" onError="$(this).attr('src','<s:url value="/img/not-found.png"/>')"></a>
 		              <div class="card-body">
 		                <h4 class="card-title">

@@ -1,8 +1,8 @@
-***REMOVED***
+package org.cesi.GoodCorner.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-***REMOVED***
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,31 +14,31 @@ public class DAOPhoto implements DAO<Photo, java.lang.Integer> {
 	public Photo getById(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public Photo create(Photo bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public Photo update(Photo bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public List<Photo> getAll() {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
-***REMOVED***
+	}
 
 	public List<Photo> getByIdAnnonce(int idAnnonce) {
 		// Definition of the list returned
@@ -55,15 +55,15 @@ public class DAOPhoto implements DAO<Photo, java.lang.Integer> {
 				Photo onePic = new Photo(cursor.getInt("id"), cursor.getString("chemin"));
 	
 				photos_list.add(onePic);
-***REMOVED***
+			}
 			cursor.close();
 			pre.close();
 	
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 	
 		return photos_list;
-***REMOVED***
+	}
 
-***REMOVED***
+}

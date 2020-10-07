@@ -1,8 +1,8 @@
-***REMOVED***
+package org.cesi.GoodCorner.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-***REMOVED***
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,27 +27,27 @@ public class DAOCategorie implements DAO<Categorie, java.lang.Integer> {
 						);
 
 				return cat;
-***REMOVED***
-***REMOVED***
+			}
+		}
 
 		catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public Categorie create(Categorie bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public Categorie update(Categorie bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public List<Categorie> getAll() {
@@ -65,21 +65,21 @@ public class DAOCategorie implements DAO<Categorie, java.lang.Integer> {
 				Categorie oneCat = new Categorie(cursor.getInt("id"), cursor.getString("libelle"));
 
 				cat_list.add(oneCat);
-***REMOVED***
+			}
 			cursor.close();
 			query.close();
 
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 
 		return cat_list;
-***REMOVED***
+	}
 
 	@Override
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
-***REMOVED***
+	}
 
-***REMOVED***
+}

@@ -1,9 +1,9 @@
-***REMOVED***
+package org.cesi.GoodCorner.dao;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-***REMOVED***
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -50,15 +50,15 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 						);
 				
 				return oneAnnonce;
-***REMOVED***
-***REMOVED***
+			}
+		}
 
 		catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public Annonce create(Annonce bean) {
@@ -83,17 +83,17 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 			prepare.executeUpdate();
 			
 			return bean;
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 		return bean;
-***REMOVED***
+	}
 
 	@Override
 	public Annonce update(Annonce bean) {
 		// TODO Auto-generated method stub
 		return null;
-***REMOVED***
+	}
 
 	@Override
 	public List<Annonce> getAll() {
@@ -130,23 +130,23 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 						);
 
 				annonces_list.add(oneAnnonce);
-***REMOVED***
+			}
 			
 			cursor.close();
 			query.close();
 
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 
 		return annonces_list;
-***REMOVED***
+	}
 
 	@Override
 	public void delete(Integer id) {
 		// TODO Auto-generated method stub
 		
-***REMOVED***
+	}
 
 	public List<Annonce> getByIdCategorie(Integer idCategorie) {
 		// Definition of the list returned
@@ -182,16 +182,16 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 						);
 
 				annonces_list.add(oneAnnonce);
-***REMOVED***
+			}
 			cursor.close();
 			pre.close();
 	
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 	
 		return annonces_list;
-***REMOVED***
+	}
 
 	public List<Annonce> getByIdCategorieAndTypeAnnonce(Integer idCategorie, Integer idTypeAnnonce) {
 		// Definition of the list returned
@@ -228,16 +228,16 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 						);
 
 				annonces_list.add(oneAnnonce);
-***REMOVED***
+			}
 			cursor.close();
 			pre.close();
 	
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 	
 		return annonces_list;
-***REMOVED***
+	}
 
 	public List<Annonce> getAllByTypeAnnonce(Integer idTypeAnnonce) {
 		// Definition of the list returned
@@ -273,15 +273,15 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 						);
 
 				annonces_list.add(oneAnnonce);
-***REMOVED***
+			}
 			cursor.close();
 			pre.close();
 	
-***REMOVED*** catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-***REMOVED***
+		}
 	
 		return annonces_list;
-***REMOVED***
+	}
 
-***REMOVED***
+}

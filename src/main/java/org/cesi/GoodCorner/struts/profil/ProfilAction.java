@@ -11,9 +11,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ProfilAction extends ActionSupport {
 
-***REMOVED***
+	/**
 	 * 
-***REMOVED***
+	 */
 	private static final long serialVersionUID = -6688367970112940796L;
 	private Utilisateur user;
 	
@@ -25,10 +25,10 @@ public class ProfilAction extends ActionSupport {
 			user = new DAOUtilisateur().getByMail(userMail);
 			
 			return SUCCESS;
-***REMOVED*** else {
+		} else {
 			return "denied";
-***REMOVED***
-***REMOVED***
+		}
+	}
 	
 	public String parametre() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -38,10 +38,10 @@ public class ProfilAction extends ActionSupport {
 			user = new DAOUtilisateur().getByMail(userMail);
 			
 			return SUCCESS;
-***REMOVED*** else {
+		} else {
 			return "denied";
-***REMOVED***
-***REMOVED***
+		}
+	}
 	
 	public String saveProfil() {
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -55,19 +55,19 @@ public class ProfilAction extends ActionSupport {
 				HttpSession session = request.getSession();
 				session.setAttribute("userNom", user.getNom());
 				session.setAttribute("userPrenom", user.getPrenom());
-***REMOVED***
+			}
 			
 			return SUCCESS;
-***REMOVED*** else {
+		} else {
 			return ERROR;
-***REMOVED***
-***REMOVED***
+		}
+	}
 
 	public Utilisateur getUser() {
 		return user;
-***REMOVED***
+	}
 
 	public void setUser(Utilisateur user) {
 		this.user = user;
-***REMOVED***
-***REMOVED***
+	}
+}
