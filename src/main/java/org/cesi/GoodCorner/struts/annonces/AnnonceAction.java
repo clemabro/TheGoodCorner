@@ -15,10 +15,7 @@ import org.cesi.GoodCorner.persistent.Utilisateur;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class AnnonceAction extends ActionSupport {
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -2473313284113724600L;
 	private List<Categorie> listeCategorie = new ArrayList<Categorie>();
 	private List<Annonce> listeAnnonces = new ArrayList<Annonce>();
@@ -31,40 +28,40 @@ public class AnnonceAction extends ActionSupport {
 	public String list() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
+
+		if (userMail != null) {
 			listeCategorie = new DAOCategorie().getAll();
-			if(idCategorie != null && !idCategorie.equals(0) && idTypeAnnonce != null && !idTypeAnnonce.equals(0)) {
+			if (idCategorie != null && !idCategorie.equals(0) && idTypeAnnonce != null && !idTypeAnnonce.equals(0)) {
 				listeAnnonces = new DAOAnnonce().getByIdCategorieAndTypeAnnonce(idCategorie, idTypeAnnonce);
 				selectedCat = new DAOCategorie().getById(idCategorie);
 			} else {
 				listeAnnonces = new DAOAnnonce().getAllByTypeAnnonce(idTypeAnnonce);
 			}
-			
+
 			return SUCCESS;
 		} else {
 			return "denied";
 		}
 	}
-	
+
 	public String create() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
+
+		if (userMail != null) {
 			listeCategorie = new DAOCategorie().getAll();
 			return SUCCESS;
 		} else {
 			return "denied";
-		}		
+		}
 	}
-	
+
 	public String saveAnnonce() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
-			if(annonce != null) {
+
+		if (userMail != null) {
+			if (annonce != null) {
 				Utilisateur user = new Utilisateur();
 				user.setMail(userMail);
 				annonce.setUtilisateur(user);
@@ -77,15 +74,15 @@ public class AnnonceAction extends ActionSupport {
 			return "denied";
 		}
 	}
-	
+
 	public String consult() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
-			if(idAnnonce != null) {
+
+		if (userMail != null) {
+			if (idAnnonce != null) {
 				annonce = new DAOAnnonce().getById(idAnnonce);
-				
+
 				return SUCCESS;
 			} else {
 				return ERROR;

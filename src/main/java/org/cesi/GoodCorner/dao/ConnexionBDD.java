@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConnexionBDD {
 
-	static private String ip = "";
-	static private String user = "";
-	static private String password = "";
+	static private String ip = "90.105.222.233:3306";
+	static private String user = "madera";
+	static private String password = "M@deraDev";
 	static private Connection connect;
 
 	/**

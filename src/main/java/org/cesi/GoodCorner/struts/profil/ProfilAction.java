@@ -11,52 +11,49 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ProfilAction extends ActionSupport {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6688367970112940796L;
 	private Utilisateur user;
-	
+
 	public String consult() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
+
+		if (userMail != null) {
 			user = new DAOUtilisateur().getByMail(userMail);
-			
+
 			return SUCCESS;
 		} else {
 			return "denied";
 		}
 	}
-	
+
 	public String parametre() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
+
+		if (userMail != null) {
 			user = new DAOUtilisateur().getByMail(userMail);
-			
+
 			return SUCCESS;
 		} else {
 			return "denied";
 		}
 	}
-	
+
 	public String saveProfil() {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		String userMail = (String) request.getSession().getAttribute("userMail");
-		
-		if(userMail != null) {
+
+		if (userMail != null) {
 			user.setMail(userMail);
-			if(user != null && user.getMail() != null && !user.getMail().isEmpty()) {
+			if (user != null && user.getMail() != null && !user.getMail().isEmpty()) {
 				new DAOUtilisateur().update(user);
-				
+
 				HttpSession session = request.getSession();
 				session.setAttribute("userNom", user.getNom());
 				session.setAttribute("userPrenom", user.getPrenom());
 			}
-			
+
 			return SUCCESS;
 		} else {
 			return ERROR;

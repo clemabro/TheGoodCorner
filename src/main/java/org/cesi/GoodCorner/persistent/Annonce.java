@@ -16,22 +16,33 @@ public class Annonce {
 	private Categorie categorie;
 	private Etat etat;
 	private List<Photo> listePhotos;
-	
-	/**
+
+	/*
 	 * @param id
+	 * 
 	 * @param titre
+	 * 
 	 * @param description
+	 * 
 	 * @param prix
+	 * 
 	 * @param ville
+	 * 
 	 * @param dateCreation
+	 * 
 	 * @param dateUpdate
+	 * 
 	 * @param utilisateur
+	 * 
 	 * @param typeAnnonce
+	 * 
 	 * @param categorie
+	 * 
 	 * @param etat
-	 */
+	 **/
 	public Annonce(Integer id, String titre, String description, Integer prix, String ville, Date dateCreation,
-			Date dateUpdate, Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat, List<Photo> listePhotos) {
+			Date dateUpdate, Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat,
+			List<Photo> listePhotos) {
 		this.id = id;
 		this.titre = titre;
 		this.description = description;
@@ -45,19 +56,28 @@ public class Annonce {
 		this.etat = etat;
 		this.listePhotos = listePhotos;
 	}
-	
-	/**
+
+	/*
 	 * @param titre
+	 * 
 	 * @param description
+	 * 
 	 * @param prix
+	 * 
 	 * @param ville
+	 * 
 	 * @param dateCreation
+	 * 
 	 * @param dateUpdate
+	 * 
 	 * @param utilisateur
+	 * 
 	 * @param typeAnnonce
+	 * 
 	 * @param categorie
+	 * 
 	 * @param etat
-	 */
+	 **/
 	public Annonce(String titre, String description, Integer prix, String ville, Date dateCreation, Date dateUpdate,
 			Utilisateur utilisateur, TypeAnnonce typeAnnonce, Categorie categorie, Etat etat, List<Photo> listePhotos) {
 		this.titre = titre;
@@ -72,10 +92,7 @@ public class Annonce {
 		this.etat = etat;
 		this.listePhotos = listePhotos;
 	}
-	
-	/**
-	 * 
-	 */
+
 	public Annonce() {
 	}
 

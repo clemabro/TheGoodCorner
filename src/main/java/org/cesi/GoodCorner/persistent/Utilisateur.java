@@ -7,15 +7,7 @@ public class Utilisateur {
 	private String prenom;
 	private String telephone;
 	private TypeUtilisateur typeUtilisateur;
-	
-	/**
-	 * @param mail
-	 * @param motDePasse
-	 * @param nom
-	 * @param prenom
-	 * @param telephone
-	 * @param typeUtilisateur
-	 */
+
 	public Utilisateur(String mail, String motDePasse, String nom, String prenom, String telephone,
 			TypeUtilisateur typeUtilisateur) {
 		super();
@@ -27,9 +19,6 @@ public class Utilisateur {
 		this.typeUtilisateur = typeUtilisateur;
 	}
 
-	/**
-	 * 
-	 */
 	public Utilisateur() {
 		super();
 	}

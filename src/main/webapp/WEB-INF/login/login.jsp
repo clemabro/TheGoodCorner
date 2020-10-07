@@ -52,7 +52,7 @@ var seConnecter = function(e) {
 					}
 				} else {
 					$('#mailExist').show();
-				}
+				}	
 			}
 		})
 	}

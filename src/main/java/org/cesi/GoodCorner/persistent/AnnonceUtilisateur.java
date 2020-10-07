@@ -11,34 +11,30 @@ public class AnnonceUtilisateur {
 		this.annonce = annonce;
 		this.utilisateur = utilisateur;
 	}
-	/**
-	 * @param utilisateur
-	 */
+
 	public AnnonceUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}
-	
-	/**
-	 * @param annonce
-	 */
+
 	public AnnonceUtilisateur(Annonce annonce) {
 		this.annonce = annonce;
 	}
-	
-	/**
-	 * 
-	 */
+
 	public AnnonceUtilisateur() {
 	}
+
 	public Annonce getAnnonce() {
 		return annonce;
 	}
+
 	public void setAnnonce(Annonce annonce) {
 		this.annonce = annonce;
 	}
+
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
 	}
+
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
 	}

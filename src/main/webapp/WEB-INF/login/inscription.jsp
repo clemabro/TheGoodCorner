@@ -9,7 +9,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	
-});
+}
 
 var inscription = function(e) {
 	e.preventDefault();

@@ -51,9 +51,8 @@ public class DAOAnnonce implements DAO<Annonce, java.lang.Integer> {
 				
 				return oneAnnonce;
 			}
-		}
 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
