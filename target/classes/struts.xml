@@ -21,4 +21,5 @@
     
     <include file="org/cesi/GoodCorner/struts/login/struts-login.xml" />
     <include file="org/cesi/GoodCorner/struts/annonces/struts-annonces.xml" />
+    <include file="org/cesi/GoodCorner/struts/profil/struts-profil.xml" />
 </struts>

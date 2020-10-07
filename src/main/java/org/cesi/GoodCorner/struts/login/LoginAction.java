@@ -23,6 +23,13 @@ public class LoginAction extends ActionSupport {
 	private String mail;
 
 	public String connexion() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String userMail = (String) request.getSession().getAttribute("userMail");
+		
+		if(userMail != null) {
+			return "list";
+***REMOVED***
+		
 		if(mail == null) {
 			setMail("");
 ***REMOVED***
@@ -87,6 +94,24 @@ public class LoginAction extends ActionSupport {
 		jsObject.write(out);
 		
 		return null;
+***REMOVED***
+	
+	public String deconnexion() {
+		HttpServletRequest request = ServletActionContext.getRequest();
+		String userMail = (String) request.getSession().getAttribute("userMail");
+		
+		if(userMail != null) {
+			HttpSession session = request.getSession();
+			session.invalidate();
+			
+			if(mail == null) {
+				setMail("");
+***REMOVED***
+			
+			return SUCCESS;
+***REMOVED*** else {
+			return ERROR;
+***REMOVED***
 ***REMOVED***
 
 	public Utilisateur getUserToCreate() {

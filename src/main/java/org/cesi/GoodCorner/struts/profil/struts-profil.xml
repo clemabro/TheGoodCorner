@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="profil" namespace="/profil" extends="struts-default">
+		<action name="consult" method="consult" class="org.cesi.GoodCorner.struts.profil.ProfilAction">
+            <result name="success">/WEB-INF/profil/consult.jsp</result>
+        </action>
+	</package>
+</struts>

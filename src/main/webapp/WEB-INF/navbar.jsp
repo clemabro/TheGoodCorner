@@ -3,7 +3,7 @@
 <!-- Navigation -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
    <div class="container">
-   	 <s:url value="list.action" namespace="/annonces" var="urlList">
+   	 <s:url value="/annonces/list.action" namespace="annonces" var="urlList">
    	 	<s:param name="idTypeAnnonce" value="1" />
    	 </s:url>
      <a class="navbar-brand" href="<s:if test="#session['userMail'] != null"><s:property value="urlList" /></s:if>">The Good Corner</a>
@@ -21,14 +21,14 @@
      	<s:if test="#session['userMail'] != null">
        <ul class="navbar-nav ml-auto">
        	 <li class="nav-item">
-           	<a class="nav-link" href="<s:url value="create.action" namespace="/annonces"/>"><i class="far fa-plus-square"></i>  Déposer une annonce</a>
+           	<a class="nav-link" href="<s:url value="/annonces/create.action" namespace="/annonces"/>"><i class="far fa-plus-square"></i>  Déposer une annonce</a>
          </li>
          <li class="nav-item">
            	<a class="nav-link" href="#"><i class="far fa-heart"></i>  Mes favoris</a>
          </li>
          <li class="nav-item">
          	<s:if test="#session['userMail'] != null">
-           		<a class="nav-link" href="#"><i class="far fa-user"></i>  ${ sessionScope.userPrenom ***REMOVED*** ${ sessionScope.userNom ***REMOVED***</a>
+           		<a class="nav-link" href="<s:url value="/profil/consult.action"/>"><i class="far fa-user"></i>  ${ sessionScope.userPrenom ***REMOVED*** ${ sessionScope.userNom ***REMOVED***</a>
            	</s:if>
          </li>
        </ul>
